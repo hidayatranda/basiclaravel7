@@ -43,4 +43,10 @@ class EdulevelController extends Controller
         return redirect('edulevels')->with('status', 'Data updated!');
       }
 
+      public function delete($id)
+      {
+        DB::table('edulevels')->where('id', $id)->delete();
+        return redirect('edulevels')->with('status', 'Data Berhasil Dihapus!');
+      }
+
 }

@@ -53,7 +53,7 @@
                         </div>
                         <div class="form-group">
                           <label>Keterangan</label>
-                          <textarea name="desc" class="form-control" autofocus required >{{ $edulevel->desc }}</textarea>
+                          <textarea name="desc" class="form-control">{{ $edulevel->desc }}</textarea>
                         </div>
                         <button type="submit" class="btn btn-success">Save</button
                       </form>

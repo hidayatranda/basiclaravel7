@@ -52,7 +52,7 @@
                         </div>
                         <div class="form-group">
                           <label>Keterangan</label>
-                          <textarea name="desc" class="form-control" autofocus required ></textarea>
+                          <textarea name="desc" class="form-control"></textarea>
                         </div>
                         <button type="submit" class="btn btn-success">Save</button
                       </form>
