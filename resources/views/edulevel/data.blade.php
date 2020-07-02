@@ -62,7 +62,7 @@
                           <td>{{ $key->name }}</td>
                           <td>{{ $key->desc }}</td>
                           <td class="text-center">
-                            <a href="" class="btn btn-primary btn-sm">
+                            <a href="{{ url('edulevels/edit/'.$key->id) }}" class="btn btn-primary btn-sm">
                               <i class="fa fa-pencil"></i>
                             </a>
                             <a href="" class="btn btn-danger btn-sm">

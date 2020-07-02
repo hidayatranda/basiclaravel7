@@ -10,8 +10,6 @@ class EdulevelController extends Controller
     public function data()
     {
       $edulevels = DB::table('edulevels')->get();
-      // return $edulevels;
-      // return view('edulevel.data', ['edulevels' => $edulevels]);
       return view('edulevel.data', compact('edulevels'));
     }
 
@@ -28,4 +26,21 @@ class EdulevelController extends Controller
       ]);
       return redirect('edulevels')->with('status', 'Data updated!');
     }
+
+    public function edit($id)
+    {
+      $edulevel = DB::table('edulevels')->where('id', $id)->first();
+      return view('edulevel.edit', compact('edulevel'));
+    }
+
+      public function editProcess(Request $request, $id)
+      {
+        DB::table('edulevels')->where('id', $id)
+        ->update([
+          'name' => $request->name,
+          'desc' => $request->desc
+        ]);
+        return redirect('edulevels')->with('status', 'Data updated!');
+      }
+
 }

@@ -17,7 +17,7 @@
             <div class="page-title">
                 <ol class="breadcrumb text-right">
                   <li><a href="#">Edulevel</a></li>
-                    <li class="active">Add</i></li>
+                    <li class="active">Edit</i></li>
                 </ol>
             </div>
         </div>
@@ -33,7 +33,7 @@
               <div class="card">
                 <div class="card-header">
                   <div class="pull-left">
-                    <strong>Tambah Jenjang</strong>
+                    <strong>Edit Jenjang</strong>
                   </div>
                   <div class="pull-right">
                     <a href="{{ url('edulevels') }}" class="btn btn-secondary btn-sm">
@@ -44,15 +44,16 @@
                 <div class="card-body">
                   <div class="row">
                     <div class="col-md-4 offset-md-4">
-                      <form action="{{ url('edulevels') }}" method="post">
+                      <form action="{{ url('edulevels/'.$edulevel->id) }}" method="post">
+                        @method('patch')
                         @csrf
                         <div class="form-group">
                           <label>Nama Jenjang</label>
-                          <input type="text" name="name" class="form-control" autofocus required >
+                          <input type="text" name="name" class="form-control" value="{{ $edulevel->name }}" autofocus required >
                         </div>
                         <div class="form-group">
                           <label>Keterangan</label>
-                          <textarea name="desc" class="form-control" autofocus required ></textarea>
+                          <textarea name="desc" class="form-control" autofocus required >{{ $edulevel->desc }}</textarea>
                         </div>
                         <button type="submit" class="btn btn-success">Save</button
                       </form>
