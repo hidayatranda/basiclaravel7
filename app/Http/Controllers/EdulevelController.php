@@ -17,9 +17,14 @@ class EdulevelController extends Controller
     {
       return view('edulevel.add');
     }
-
+ 
     public function addProcess(Request $request)
     {
+      $request->validate([
+          'name' => 'required|min:2',
+          'desc' => 'required',
+      ]);
+
         DB::table('edulevels')->insert([
         'name' => $request->name,
         'desc' => $request->desc
