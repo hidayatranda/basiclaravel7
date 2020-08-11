@@ -17,7 +17,7 @@ class EdulevelController extends Controller
     {
       return view('edulevel.add');
     }
- 
+
     public function addProcess(Request $request)
     {
       $request->validate([
